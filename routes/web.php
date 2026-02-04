@@ -10,6 +10,12 @@ Route::get('/test', function (){
     return View('test');
 });
 
+// Route::get('/test', function (){
+//     return redirect('crud', 303);
+    // return redirect()->route('crud');
+    // return to_route('crud');
+// });
+
 // Route::get('/crud', function (){
 //     return View('crud/index');
 // });
