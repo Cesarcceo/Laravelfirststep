@@ -9,5 +9,15 @@
     <h1>Contact 1</h1>
 
     <h3>{{$name}}</h3>
+
+    @if($name == 'Hector')
+        Welcome hector
+    @else
+        you are not Hector
+    @endif    
+    <ul>
+    @foreach([1,2,3,4,5,6] as $item)
+        <li>{{$item}}</li>
+    @endforeach
 </body>
 </html>
