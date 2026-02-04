@@ -24,3 +24,13 @@ Route::get('/crud', function(){
 
     return view('crud/index', $data);
 })->name('crud');
+
+Route::get('contact1', function(){
+    $data = ['name' => 'Hector'];
+    return view('contacts/contact1', $data);
+})->name('contact1');
+
+Route::get('contact2', function(){
+    $data = ['name' => 'Garcia'];
+    return view('contacts/contact2', $data);
+})->name('contact2');
