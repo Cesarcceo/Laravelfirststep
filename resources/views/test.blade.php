@@ -7,5 +7,6 @@
 </head>
 <body>
     <h1>Welcome World</h1>
+    <a href="{{ route("crud") }}">Crud</a>
 </body>
 </html>
