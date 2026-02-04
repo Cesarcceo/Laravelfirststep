@@ -8,5 +8,6 @@
 <body>
     <h1>Welcome World</h1>
     <a href="{{ route("crud") }}">Crud</a>
+    {{ $post[0] }}
 </body>
 </html>
