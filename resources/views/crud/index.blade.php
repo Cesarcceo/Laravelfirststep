@@ -7,5 +7,9 @@
 </head>
 <body>
     <h1>My CRUD document</h1>
+
+    <h3><?php echo $name?></h3>
+
+    {{$name}}
 </body>
 </html>
