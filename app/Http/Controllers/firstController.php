@@ -9,4 +9,7 @@ class firstController extends Controller{
     function index() {
         return view('test');
     }
+    function other($post) {
+        echo $post;
+    }
 }
