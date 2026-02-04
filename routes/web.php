@@ -1,14 +1,13 @@
 <?php
 
+use App\Http\Controllers\firstController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/test', function (){
-    return View('test');
-});
+Route::get('/test', [firstController::class, 'index']);
 
 // Route::get('/test', function (){
 //     return redirect('crud', 303);
