@@ -6,8 +6,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+// Route::resource('/test', firstController::class);
 
 Route::get('/test', [firstController::class, 'index']);
+Route::get('/test/{post}', [firstController::class, 'other']);
 
 // Route::get('/test', function (){
 //     return redirect('crud', 303);
