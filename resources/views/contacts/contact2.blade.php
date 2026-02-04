@@ -1,4 +1,11 @@
-<!DOCTYPE html>
+@extends('../master')
+
+@section('contenct')
+    <h1>Contact 2</h1>
+
+    <h2>{{$name}}</h2>
+@endsection
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -10,4 +17,4 @@
 
     <h2>{{$name}}</h2>
 </body>
-</html>
+</html> -->
