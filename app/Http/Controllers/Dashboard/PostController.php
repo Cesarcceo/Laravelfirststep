@@ -15,17 +15,18 @@ class PostController extends Controller
      */
     public function index()
     {
-        $post = Post::find(2);
+        $post = Post::find(1);
 
-        $post->delete();
-        
-        // dd($post);
+        dd($post->categorie->title);
         
         return response()->json([
             'name' => 'my name',
             'state' => 'Cesario'
-        ]);
+            ]);
     }
+
+    //TODO For delete
+        // $post->delete();
     //TODO For update
         // $post->update([
         //     'title' => 'test title updated',
