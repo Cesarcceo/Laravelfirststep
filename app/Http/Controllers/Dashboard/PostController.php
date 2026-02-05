@@ -13,22 +13,33 @@ class PostController extends Controller
      */
     public function index()
     {
-        Post::create([
-            'title' => 'test title',
-            'slug' => 'test slug',
-            'content' => 'test content',
-            'categorie_id' => 1,
-            'description' => 'test description',
-            'posted' => 'not',
-            'image' => 'test image',
+        $post = Post::find(2);
+
+        $post->update([
+            'title' => 'test title updated',
+            'slug' => 'test slug updated',
+            'content' => 'test content updated',
+            'image' => 'test image updated',
         ]);
+        
+        // dd($post);
         
         return 'index 2.0';
     }
-
-    /**
-     * Show the form for creating a new resource.
-     */
+    //TODO For create
+        // Post::create([
+        //     'title' => 'test title',
+        //     'slug' => 'test slug',
+        //     'content' => 'test content',
+        //     'categorie_id' => 1,
+        //     'description' => 'test description',
+        //     'posted' => 'not',
+        //     'image' => 'test image',
+        // ]);
+        
+        /**
+         * Show the form for creating a new resource.
+        */
     public function create()
     {
         //
