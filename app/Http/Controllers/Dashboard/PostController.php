@@ -3,12 +3,11 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Post\StoreRequest;
 use App\Models\Categorie;
 use App\Models\Post;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator;
 
-use function Pest\Laravel\delete;
 
 class PostController extends Controller
 {
@@ -62,8 +61,12 @@ class PostController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreRequest $request)
     {
+
+        Post::create($request->validated());
+
+        return to_route('post.index');
 
         //TODO the second method for the validations
         // $validation = Validator::make($request->all(),[
@@ -77,20 +80,22 @@ class PostController extends Controller
 
         // dd($validation->fails());
 
-        $request->validate([
-            'title' => 'required|min:5|max:500',
-            'slug' => 'required|min:5|max:500',
-            'content' => 'required|min:7',
-            'categorie_id' => 'required|interger',
-            'description' => 'required|min:7',
-            'posted' => 'required',
-        ]);
+        //TODO the best method whit Request
+        // $request->validate([
+        //     'title' => 'required|min:5|max:500',
+        //     'slug' => 'required|min:5|max:500',
+        //     'content' => 'required|min:7',
+        //     'categorie_id' => 'required|interger',
+        //     'description' => 'required|min:7',
+        //     'posted' => 'required',
+        // ]);
+        // echo 'not';
 
-        echo 'not';
 
+ 
         //is the same thing
-        Post::create($request->all());
-
+        // Post::create($request->all());
+        
         // Post::create([
         //     'title' => $request->all()['title'],
         //     'slug' => $request->all()['slug'],
@@ -102,8 +107,6 @@ class PostController extends Controller
         // ]);
 
         // dd($request->all());
-
-        return to_route('post.index');
     }
         
         // dd(request()->get('title'));
