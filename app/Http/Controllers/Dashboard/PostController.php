@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
+use App\Models\Categorie;
 use App\Models\Post;
 use Illuminate\Http\Request;
 
@@ -15,14 +16,16 @@ class PostController extends Controller
      */
     public function index()
     {
-        $post = Post::find(1);
+        $categorie = Categorie::find(1);
+        // $post = Post::find(1);
 
-        dd($post->categorie->title);
-        
-        return response()->json([
-            'name' => 'my name',
-            'state' => 'Cesario'
-            ]);
+        // dd($post->categorie->title);
+        dd($categorie->post);
+
+        // return response()->json([
+        //     'name' => 'my name',
+        //     'state' => 'Cesario'
+        //     ]);
     }
 
     //TODO For delete
