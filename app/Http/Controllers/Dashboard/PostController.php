@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Categorie;
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 use function Pest\Laravel\delete;
 
@@ -63,6 +64,18 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
+
+        //TODO the second method for the validations
+        // $validation = Validator::make($request->all(),[
+        //     'title' => 'required|min:5|max:500',
+        //     'slug' => 'required|min:5|max:500',
+        //     'content' => 'required|min:7',
+        //     'categorie_id' => 'required|interger',
+        //     'description' => 'required|min:7',
+        //     'posted' => 'required',
+        // ]);
+
+        // dd($validation->fails());
 
         $request->validate([
             'title' => 'required|min:5|max:500',
