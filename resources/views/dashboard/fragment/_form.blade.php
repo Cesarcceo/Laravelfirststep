@@ -1,13 +1,13 @@
 @csrf
 
         <label for="">Title</label>
-        <input type="text" name="title" value="{{ $post->title }}">
+        <input type="text" name="title" value="{{ old('title',$post->title) }}">
 
         <label for="">Slug</label>
-        <input type="text" name="slug" value="{{ $post->slug }}">
+        <input type="text" name="slug" value="{{ old('slug',$post->slug) }}">
 
         <label for="">Content</label>
-        <textarea name="content">{{ $post->content }}</textarea>
+        <textarea name="content">{{ old('content', $post->content) }}</textarea>
         
         <label for="">Categorie</label>
         <select name="categorie_id" id="">
@@ -17,7 +17,7 @@
         </select>
         
         <label for="">Description</label>
-        <textarea name="description">{{ $post->description }}</textarea>
+        <textarea name="description">{{ old('description', $post->description) }}</textarea>
 
         <label for="">Posted</label>
         <select name="posted" id="">
