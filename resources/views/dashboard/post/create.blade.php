@@ -1,10 +1,17 @@
 @extends('../../master')
 
 @section('contenct')
+
+    @if($errors->any())
+        @foreach ($errors->all() as $e)
+            <div class="error">{{ $e }}</div>
+        @endforeach
+    @endif
+
     <form action="{{ route('post.store') }}" method="post">
 
         @csrf
-        
+
         <label for="">Title</label>
         <input type="text" name="title">
 
