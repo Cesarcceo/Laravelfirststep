@@ -16,11 +16,14 @@ class PostController extends Controller
      */
     public function index()
     {
-        $categorie = Categorie::find(1);
+        $posts = Post::get();
+        // dd($posts);
+        return view('dashboard/post/index', compact('posts'));
+
         // $post = Post::find(1);
 
         // dd($post->categorie->title);
-        dd($categorie->post);
+        // dd($categorie->post);
 
         // return response()->json([
         //     'name' => 'my name',
