@@ -127,15 +127,17 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        //
+        $categories = Categorie::pluck('id', 'title');
+        return view('dashboard.post.edit', compact('categories', 'post'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Post $post)
+    public function update(StoreRequest $request, Post $post)
     {
-        //
+        $post->update($request->validated());
+        return to_route('post.index');
     }
 
     /**
