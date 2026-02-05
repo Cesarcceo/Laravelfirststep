@@ -13,4 +13,9 @@ class Categorie extends Model
         'title',
         'slug',
     ];
+
+    public function post()
+    {
+        return $this->hasMany(Post::class);
+    }
 }
