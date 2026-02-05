@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Post\PutRequest;
 use App\Http\Requests\Post\StoreRequest;
 use App\Models\Categorie;
 use App\Models\Post;
-use Illuminate\Http\Request;
 
 
 class PostController extends Controller
@@ -135,7 +135,7 @@ class PostController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(StoreRequest $request, Post $post)
+    public function update(PutRequest $request, Post $post)
     {
         $post->update($request->validated());
         return to_route('post.index');
