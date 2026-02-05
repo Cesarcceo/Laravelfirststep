@@ -13,7 +13,17 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
+        Post::create([
+            'title' => 'test title',
+            'slug' => 'test slug',
+            'content' => 'test content',
+            'categorie_id' => 1,
+            'description' => 'test description',
+            'posted' => 'not',
+            'image' => 'test image',
+        ]);
+        
+        return 'index 2.0';
     }
 
     /**
