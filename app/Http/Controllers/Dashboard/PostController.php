@@ -120,7 +120,8 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
-        //
+        $categories = Categorie::pluck('id', 'title');
+        return view('dashboard.post.show', compact('categories', 'post'));
     }
 
     /**
