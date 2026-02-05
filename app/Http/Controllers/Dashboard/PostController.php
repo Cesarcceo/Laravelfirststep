@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Post;
 use Illuminate\Http\Request;
 
+use function Pest\Laravel\delete;
+
 class PostController extends Controller
 {
     /**
@@ -15,17 +17,22 @@ class PostController extends Controller
     {
         $post = Post::find(2);
 
-        $post->update([
-            'title' => 'test title updated',
-            'slug' => 'test slug updated',
-            'content' => 'test content updated',
-            'image' => 'test image updated',
-        ]);
+        $post->delete();
         
         // dd($post);
         
-        return 'index 2.0';
+        return response()->json([
+            'name' => 'my name',
+            'state' => 'Cesario'
+        ]);
     }
+    //TODO For update
+        // $post->update([
+        //     'title' => 'test title updated',
+        //     'slug' => 'test slug updated',
+        //     'content' => 'test content updated',
+        //     'image' => 'test image updated',
+        // ]);
     //TODO For create
         // Post::create([
         //     'title' => 'test title',
