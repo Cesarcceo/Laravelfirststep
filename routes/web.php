@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Dashboard\PostController;
 use App\Http\Controllers\firstController;
 use Illuminate\Support\Facades\Route;
 
@@ -41,3 +42,8 @@ Route::get('contact2', function(){
     $data = ['name' => 'Garcia'];
     return view('contacts/contact2', $data);
 })->name('contact2');
+
+
+
+
+Route::resource('post', PostController::class);
