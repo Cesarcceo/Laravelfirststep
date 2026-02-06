@@ -7,7 +7,7 @@ use App\Http\Requests\Post\PutRequest;
 use App\Http\Requests\Post\StoreRequest;
 use App\Models\Categorie;
 use App\Models\Post;
-
+use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
@@ -16,6 +16,8 @@ class PostController extends Controller
      */
     public function index()
     {
+        // dd(Auth::user()->can('editor.post.index'));
+        dd(Auth::user()->hasRole('Editor'));
         $posts = Post::paginate(2);
         // dd($posts);
         return view('dashboard/post/index', compact('posts'));
