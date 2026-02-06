@@ -55,3 +55,7 @@ Route::group(['prefix' => 'dashboard'],function (){
 
 });
 
+Route::get('test2/{id?}/{name?}', function ($id=28394750938745, $name="cesario"){
+    echo $id;
+    echo $name;
+});
