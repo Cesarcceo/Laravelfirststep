@@ -44,9 +44,14 @@ Route::get('contact2', function(){
     return view('contacts/contact2', $data);
 })->name('contact2');
 
+Route::group(['prefix' => 'dashboard'],function (){
+    Route::resource('post', PostController::class);
+    Route::resource('categorie', CategorieController::class);
 
+    Route::resources([
+        'postis' => PostController::class,
+        'category' => CategorieController::class,
+    ]);
 
+});
 
-Route::resource('post', PostController::class);
-
-Route::resource('categorie', CategorieController::class);
