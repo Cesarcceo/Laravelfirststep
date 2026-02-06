@@ -3,6 +3,7 @@
 use App\Http\Controllers\Dashboard\CategorieController;
 use App\Http\Controllers\Dashboard\PostController;
 use App\Http\Controllers\firstController;
+use App\Http\Middleware\TestMiddlewate;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -69,4 +70,10 @@ Route::controller(PostController::class)->group(function(){
     Route::post('post', 'store')->name("post.store");
     Route::put('post/{post}', 'update')->name("post.update");
     Route::delete('post/{post}', 'destroy')->name("post.destroy");
+});
+
+Route::middleware([TestMiddlewate::class])->group(function (){
+    Route::get('/test3', function(){
+        echo "welcome to test3";
+    });
 });
