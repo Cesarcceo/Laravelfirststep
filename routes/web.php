@@ -56,6 +56,14 @@ Route::group(['prefix' => 'dashboard'],function (){
 
 });
 
+// Route::resource('post', PostController::class)->only([
+//     'index', 'show'
+// ]);
+
+// Route::resource('post', PostController::class)->except([
+//     'create', 'store', 'update', 'destroy'
+// ]);
+
 Route::get('test2/{id?}/{name?}', function ($id=28394750938745, $name="cesario"){
     echo $id;
     echo $name;
