@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Dashboard\CategorieController;
 use App\Http\Controllers\Dashboard\PostController;
 use App\Http\Controllers\firstController;
 use Illuminate\Support\Facades\Route;
@@ -47,3 +48,5 @@ Route::get('contact2', function(){
 
 
 Route::resource('post', PostController::class);
+
+Route::resource('categorie', CategorieController::class);
